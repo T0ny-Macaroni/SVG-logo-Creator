@@ -1,10 +1,11 @@
 const inquirer = require("inquirer");
 const fs = require("fs")
-const { generateSVG } = require("./Assets/GenerateSVG");
-const { generateShape } = require('./Assets/GenerateShape');
+const { generateSVG } = require("./lib/GenerateSVG");
+const { generateShape } = require('./lib/GenerateShape.js');
 const { error } = require("console");
 
-inquirer 
+function init() {
+    inquirer 
 .prompt([
     {
         type: 'input',
@@ -37,4 +38,7 @@ inquirer
     err ? console.error(err) : console.log("Generated Logo")
     );
 })
-.catch((err) => console.log(err));
+.catch((err) => console.log(err))
+};
+
+init()
