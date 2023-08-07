@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs")
 const { generateSVG } = require("./lib/GenerateSVG");
-const { generateShape } = require('./lib/GenerateShape.js');
+const { generateShape } = require('./lib/GenerateShape');
 const { error } = require("console");
 
 function init() {
@@ -31,7 +31,7 @@ function init() {
 ])
 .then((data) => {
     const svgPath = './Assets/GeneratedLogo.svg';
-    const finalLogo = generateShape(data);
+    var finalLogo = generateShape(data);
 
 
     fs.writeFile(svgPath, generateSVG(finalLogo), (err) =>
